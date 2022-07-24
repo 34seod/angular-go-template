@@ -4,6 +4,7 @@ import "gorm.io/gorm"
 
 type User struct {
 	gorm.Model
+
 	Email    string `json:"email"`
 	Password string `json:"password"`
 	Name     string `json:"name"`
@@ -23,8 +24,7 @@ func (u *User) FindAll(db *gorm.DB) ([]User, error) {
 }
 
 func (u *User) FindByID(db *gorm.DB) error {
-	result := db.Debug().Where("id = ?", u.ID).First(u)
-	return result.Error
+	return db.Debug().Where("id = ?", u.ID).First(u).Error
 }
 
 func (u *User) Create(db *gorm.DB) error {
