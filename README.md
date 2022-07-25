@@ -14,7 +14,7 @@ docker-compose down
 ### version:
   - golang:1.18.3
   - gin-gonic/gin:1.8.1
-	- gorm.io/gorm:1.23.8
+  - gorm.io/gorm:1.23.8
 
 ## db
 ### version:
